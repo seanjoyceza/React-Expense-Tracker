@@ -1,8 +1,8 @@
 import Expenses from "./components/Expenses/Expenses";
 import React from "react";
+import NewExpense from "./components/NewExpense/NewExpense";
 
 const App = () => {
-    //arrow functions ES6
     const expenses = [
         {
             id: "e1",
@@ -34,9 +34,14 @@ const App = () => {
     // return React.createElement('div', {}, React.createElement('h2', {}, "Let's get started!"),
     // React.createElement(Expenses, {items: expenses}));
 
+    const addExpenseHandler = (expense) => {
+        console.log("In App.js");
+        console.log(expense);
+    };
+
     return (
         <div>
-            <h2>Let's get started!</h2>
+            <NewExpense onAddExpense={addExpenseHandler} />
             <Expenses items={expenses} />
         </div>
     );

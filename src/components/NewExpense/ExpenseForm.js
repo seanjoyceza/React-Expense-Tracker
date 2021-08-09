@@ -54,10 +54,6 @@ const ExpenseForm = (props) => {
         setEnteredDate("");
     };
 
-    const onSubmitHandler = (event) => {
-        event.preventDefault();
-    };
-
     return (
         <form className="" onSubmit={submitHandler}>
             <div className="new-expense__controls">
@@ -91,7 +87,7 @@ const ExpenseForm = (props) => {
                 </div>
             </div>
             <div className="new-expense__actions">
-                <button onClick={onSubmitHandler} type="submit">
+                <button type="button" onClick={props.onCancel}>
                     Cancel
                 </button>
                 <button type="submit">Add Expense</button>
